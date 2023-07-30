@@ -4,12 +4,12 @@ import { Box } from '@mui/system';
 
 import { DarkTheme, LightTheme } from './../themes';
 
-interface IThemeContextData {
+export interface IThemeContextData {
   themeName: 'light' | 'dark';
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext({} as IThemeContextData);
+export const ThemeContext = createContext({} as IThemeContextData);
 
 export const useAppThemeContext = () => {
   return useContext(ThemeContext);

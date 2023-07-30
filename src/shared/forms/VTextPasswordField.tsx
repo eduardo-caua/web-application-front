@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { TextField, TextFieldProps, InputAdornment, IconButton } from '@mui/material';
 import { useField } from '@unform/core';
 import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import VisibilityOff from '@mui/icons-material/VisibilityOffOutlined';
 
 type TVTextPasswordFieldProps = TextFieldProps & {
   name: string;
