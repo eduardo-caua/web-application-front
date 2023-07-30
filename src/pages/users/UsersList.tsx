@@ -3,6 +3,7 @@ import { Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, 
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { IUsersList, UsersService, } from '../../shared/services/api/users/UsersService';
+import { ReportsService } from '../../shared/services/api/reports/ReportsService';
 import { ListsComponent } from '../../shared/components';
 import { BaseLayout } from '../../shared/layouts';
 import { useDebounce } from '../../shared/hooks';
@@ -69,8 +70,12 @@ export const UsersList: React.FC = () => {
           searchPlaceholder={process.env.REACT_APP_SEARCH_PLACEHOLDER_BY_NAME}
           showSearchInput
           searchText={search}
+          showDownloadButton={count !== 0 }
           newButtonLabel='New'
           onNewButtonClick={() => navigate('/users/new')}
+          onDownloadButtonClick={() => {
+            window.location.href = ReportsService.downloadUsersReport(search);
+          }}
           onSearchTextChange={text => setSearchParams({ search: text, page: '1' }, { replace: true })}
         />
       }
