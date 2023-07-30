@@ -6,8 +6,6 @@ import { IUsersList, UsersService, } from '../../shared/services/api/users/Users
 import { ListsComponent } from '../../shared/components';
 import { BaseLayout } from '../../shared/layouts';
 import { useDebounce } from '../../shared/hooks';
-import { Environment } from '../../shared/environment';
-
 
 export const UsersList: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -68,7 +66,7 @@ export const UsersList: React.FC = () => {
       title='Users'
       toolbar={
         <ListsComponent
-          searchPlaceholder={Environment.SEARCH_PLACEHOLDER_BY_NAME}
+          searchPlaceholder={process.env.REACT_APP_SEARCH_PLACEHOLDER_BY_NAME}
           showSearchInput
           searchText={search}
           newButtonLabel='New'
@@ -106,7 +104,7 @@ export const UsersList: React.FC = () => {
           </TableBody>
 
           {count === 0 && !isLoading && (
-            <caption>{Environment.EMPTY_LIST_MESSAGE}</caption>
+            <caption>{process.env.REACT_APP_EMPTY_LIST_MESSAGE}</caption>
           )}
 
           <TableFooter>
@@ -117,12 +115,12 @@ export const UsersList: React.FC = () => {
                 </TableCell>
               </TableRow>
             )}
-            {(count > 0 && count > Environment.PAGE_SIZE) && (
+            {(count > 0 && count > process.env.REACT_APP_PAGE_SIZE) && (
               <TableRow>
                 <TableCell colSpan={3}>
                   <Pagination
                     page={page}
-                    count={Math.ceil(count / Environment.PAGE_SIZE)}
+                    count={Math.ceil(count / process.env.REACT_APP_PAGE_SIZE)}
                     onChange={(_, newPage) => setSearchParams({ search, page: newPage.toString() }, { replace: true })}
                   />
                 </TableCell>

@@ -1,7 +1,5 @@
-import { Environment } from '../../../environment';
-
 const downloadUsersReport = (): string => {
-  return `${Environment.URL_BASE}/reports/users`;
+  return `${process.env.REACT_APP_URL_BASE}/reports/users`;
 };
 
 export const ReportsService = {

@@ -1,4 +1,3 @@
-import { Environment } from '../../../environment';
 import { API } from '../axios-config';
 
 export interface IUsersList {
@@ -24,9 +23,9 @@ type TUserData = {
 
 const getAll = async (page = 1, filter = ''): Promise<TUserData | Error> => {
   try {
-    const offset = page === 1 ? page-1 : (page-1)*Environment.PAGE_SIZE;
+    const offset = page === 1 ? page-1 : (page-1)*process.env.REACT_APP_PAGE_SIZE;
 
-    const urlRelativa = `/users?_offset=${offset}&_limit=${Environment.PAGE_SIZE}&name=${filter}`;
+    const urlRelativa = `/users?_offset=${offset}&_limit=${process.env.REACT_APP_PAGE_SIZE}&name=${filter}`;
 
     const { data } = await API.get(urlRelativa);
 

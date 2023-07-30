@@ -9,14 +9,11 @@ This a single page application to manage users. The base code is written in <a h
 ## Next Steps
 - Features
   - Question modal instead of native alerts to capture users approve
-  - Search field do a full text search in all entity attributes
 - Architecture
-  - Using .env library
-  - Split better the components
   - Should we use selectors?
   - Service worker to handle connection problems
 - Security
-  - Http only to manage cookies
+  - Http only to manage cookies/sessions
 
 ## Installation
 
