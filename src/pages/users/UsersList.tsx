@@ -62,6 +62,17 @@ export const UsersList: React.FC = () => {
   };
 
 
+  const formatPhoneNumber = (phoneNumberString: string | undefined) => {
+    const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+    const match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      const intlCode = (match[1] ? '+1 ' : '');
+      return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+    }
+    return phoneNumberString;
+  };
+
+
   return (
     <BaseLayout
       title='Users'
@@ -95,7 +106,7 @@ export const UsersList: React.FC = () => {
               <TableRow key={row.id}>
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.email}</TableCell>
-                <TableCell>{row.phone}</TableCell>
+                <TableCell>{formatPhoneNumber(row.phone)}</TableCell>
                 <TableCell>
                   <IconButton size="small" onClick={() => handleDelete(row.id)}>
                     <Icon>delete</Icon>

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import * as yup from 'yup';
 
 import { UsersService } from '../../shared/services/api/users/UsersService';
-import { VTextField, VTextPasswordField, VForm, useVForm, IVFormErrors } from '../../shared/forms';
+import { VTextField, VTextPhoneField, VTextPasswordField, VForm, useVForm, IVFormErrors } from '../../shared/forms';
 import { DetailsComponent } from '../../shared/components';
 import { BaseLayout } from '../../shared/layouts';
 
@@ -186,7 +186,7 @@ export const DetailedUser: React.FC = () => {
 
             <Grid container item direction="row" spacing={2}>
               <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
-                <VTextField
+                <VTextPhoneField
                   fullWidth
                   name='phone'
                   label='Phone'
