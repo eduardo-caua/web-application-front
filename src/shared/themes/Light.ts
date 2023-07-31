@@ -7,17 +7,17 @@ export const LightTheme = createTheme({
       main: '#3F51B5',
       dark: '#2C387E',
       light: '#6573C3',
-      contrastText: '#ffffff',
+      contrastText: '#ffffff'
     },
     secondary: {
       main: '#F50057',
       dark: '#F73378',
       light: '#AB003C',
-      contrastText: '#ffffff',
+      contrastText: '#ffffff'
     },
     background: {
       paper: '#ffffff',
-      default: '#fafafa',
+      default: '#fafafa'
     }
   }
 });

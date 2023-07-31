@@ -2,11 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { useDrawerContext } from '../shared/contexts';
-import {
-  Dashboard,
-  DetailedUser,
-  UsersList,
-} from '../pages';
+import { Dashboard, DetailedUser, UsersList } from '../pages';
 
 export const AppRoutes = () => {
   const { setDrawerOptions } = useDrawerContext();
@@ -16,13 +12,13 @@ export const AppRoutes = () => {
       {
         icon: 'home',
         path: '/home',
-        label: 'Home',
+        label: 'Home'
       },
       {
         icon: 'people',
         path: '/users',
-        label: 'Users',
-      },
+        label: 'Users'
+      }
     ]);
   }, []);
 

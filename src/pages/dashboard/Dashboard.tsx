@@ -12,49 +12,36 @@ export const Dashboard = () => {
   useEffect(() => {
     setIsLoadingUsers(true);
 
-    UsersService.getAll(1)
-      .then((result) => {
-        setIsLoadingUsers(false);
+    UsersService.getAll(1).then((result) => {
+      setIsLoadingUsers(false);
 
-        if (result instanceof Error) {
-          alert(result.message);
-        } else {
-          setCountUsers(result.count);
-        }
-      });
+      if (result instanceof Error) {
+        alert(result.message);
+      } else {
+        setCountUsers(result.count);
+      }
+    });
   }, []);
 
   return (
-    <BaseLayout
-      title='Home'
-      toolbar={<ListsComponent showNewButton={false} />}
-    >
-      <Box width='100%' display='flex'>
+    <BaseLayout title="Home" toolbar={<ListsComponent showNewButton={false} />}>
+      <Box width="100%" display="flex">
         <Grid container margin={2}>
           <Grid item container spacing={2}>
             <Grid item xs={12} sm={12} md={6} lg={4} xl={3}>
-              <Card style={{height:'100%'}}>
+              <Card style={{ height: '100%' }}>
                 <CardContent>
-                  <Typography variant='h5' align='center' marginTop={3}>
+                  <Typography variant="h5" align="center" marginTop={3}>
                     Users
                   </Typography>
 
-                  <Box padding={3} display='flex' justifyContent='center' alignItems='center'>
-                    {!isLoadingUsers && (
-                      <Typography variant='h1'>
-                        {countUsers}
-                      </Typography>
-                    )}
-                    {isLoadingUsers && (
-                      <Typography variant='h6'>
-                        Loading...
-                      </Typography>
-                    )}
+                  <Box padding={3} display="flex" justifyContent="center" alignItems="center">
+                    {!isLoadingUsers && <Typography variant="h1">{countUsers}</Typography>}
+                    {isLoadingUsers && <Typography variant="h6">Loading...</Typography>}
                   </Box>
                 </CardContent>
               </Card>
             </Grid>
-
           </Grid>
         </Grid>
       </Box>

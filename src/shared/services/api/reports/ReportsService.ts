@@ -3,5 +3,5 @@ const downloadUsersReport = (search: string): string => {
 };
 
 export const ReportsService = {
-  downloadUsersReport,
+  downloadUsersReport
 };

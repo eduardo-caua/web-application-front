@@ -41,6 +41,6 @@ export const useVForm = () => {
     saveAndClose: handleSaveAndClose,
 
     isSaveAndNew: handleIsSaveAndNew,
-    isSaveAndClose: handleIsSaveAndClose,
+    isSaveAndClose: handleIsSaveAndClose
   };
 };

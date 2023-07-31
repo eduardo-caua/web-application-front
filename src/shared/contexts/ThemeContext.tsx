@@ -19,7 +19,7 @@ export const AppThemeProvider: React.FC = ({ children }) => {
   const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
 
   const toggleTheme = useCallback(() => {
-    setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark' : 'light');
+    setThemeName((oldThemeName) => (oldThemeName === 'light' ? 'dark' : 'light'));
   }, []);
 
   const theme = useMemo(() => {
@@ -27,7 +27,6 @@ export const AppThemeProvider: React.FC = ({ children }) => {
 
     return DarkTheme;
   }, [themeName]);
-
 
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>

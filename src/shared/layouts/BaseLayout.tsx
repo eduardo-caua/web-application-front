@@ -24,21 +24,12 @@ export const BaseLayout: React.FC<IBaseLayoutProps> = ({ children, title, toolba
           </IconButton>
         )}
 
-        <Typography
-          overflow="hidden"
-          whiteSpace="nowrap"
-          textOverflow="ellipses"
-          variant={smDown ? 'h5' : mdDown ? 'h4' : 'h3'}
-        >
+        <Typography overflow="hidden" whiteSpace="nowrap" textOverflow="ellipses" variant={smDown ? 'h5' : mdDown ? 'h4' : 'h3'}>
           {title}
         </Typography>
       </Box>
 
-      {toolbar && (
-        <Box>
-          {toolbar}
-        </Box>
-      )}
+      {toolbar && <Box>{toolbar}</Box>}
 
       <Box flex={1} overflow="auto">
         {children}

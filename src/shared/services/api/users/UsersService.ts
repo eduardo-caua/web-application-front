@@ -19,11 +19,11 @@ export interface IUser {
 type TUserData = {
   rows: IUsersList[];
   count: number;
-}
+};
 
 const getAll = async (page = 1, filter = ''): Promise<TUserData | Error> => {
   try {
-    const offset = page === 1 ? page-1 : (page-1)*process.env.REACT_APP_PAGE_SIZE;
+    const offset = page === 1 ? page - 1 : (page - 1) * process.env.REACT_APP_PAGE_SIZE;
 
     const urlRelativa = `/users?_offset=${offset}&_limit=${process.env.REACT_APP_PAGE_SIZE}&name=${filter}`;
 
@@ -93,5 +93,5 @@ export const UsersService = {
   create,
   getById,
   updateById,
-  deleteById,
+  deleteById
 };

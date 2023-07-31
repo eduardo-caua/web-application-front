@@ -25,7 +25,7 @@ $ yarn install | make install
 ## Running the app
 
 ```bash
-$ yarn run start | make start
+$ yarn run start | make dev
 ```
 
 ## Test
