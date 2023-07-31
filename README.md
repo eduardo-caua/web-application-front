@@ -19,25 +19,33 @@ This a single page application to manage users. The base code is written in <a h
 ## Installation
 
 ```bash
-$ yarn install | make install
+$ make install
 ```
 
 ## Running the app
 
+### locally
+
 ```bash
-$ yarn run start | make dev
+$ make dev
+```
+
+### via Docker
+
+```bash
+$ docker-compose up
 ```
 
 ## Test
 
 ```bash
-$ yarn run test | make test
+$ make test
 ```
 
 ## Build
 
 ```bash
-$ yarn run build | make build
+$ make build
 ```
 
 ## License
