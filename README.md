@@ -9,6 +9,7 @@ This a single page application to manage users. The base code is written in <a h
 ## Next Steps
 - Features
   - Question modal instead of native alerts to capture users approve
+  - Authentication with JWT
 - Architecture
   - Should we use selectors?
   - Service worker to handle connection problems
@@ -18,25 +19,25 @@ This a single page application to manage users. The base code is written in <a h
 ## Installation
 
 ```bash
-$ yarn install
+$ yarn install | make install
 ```
 
 ## Running the app
 
 ```bash
-$ yarn start
+$ yarn run start | make start
 ```
 
 ## Test
 
 ```bash
-$ yarn run test
+$ yarn run test | make test
 ```
 
 ## Build
 
 ```bash
-$ yarn run build
+$ yarn run build | make build
 ```
 
 ## License
